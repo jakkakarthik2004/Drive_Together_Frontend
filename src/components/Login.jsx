@@ -19,7 +19,7 @@ const Login = () => {
 
     const getData = () => {
         const data = { email, password }
-        axios.post("http://localhost:3001/login", data)
+        axios.post("https://drive-together-backend.onrender.com/3001/login", data)
             .then(response => {
                 if(response.data.status === false) {
                     alert(response.data.message);
