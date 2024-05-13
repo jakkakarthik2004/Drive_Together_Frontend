@@ -33,7 +33,7 @@ const Book = () => {
   
   const bookCar = () => {
     const data = { leavingFrom, goingTo, date };
-    axios.post('http://localhost:3001/bookcar', data, {
+    axios.post('https://drive-together-backend.onrender.com/3001/bookcar', data, {
       headers: {
         'auth-token': localStorage.getItem('token')
       }
