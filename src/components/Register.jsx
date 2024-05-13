@@ -47,7 +47,7 @@ const Register = () => {
         else {
             const data = { Name, email, password, confirmPassword, phone };
             axios
-                .post('http://localhost:3001/register', data)
+                .post('https://drive-together-backend.onrender.com/3001/register', data)
                 .then((response) => {
                     if (response.data.success === false) {
                         alert(response.data.message);
