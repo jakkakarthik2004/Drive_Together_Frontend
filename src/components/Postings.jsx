@@ -11,7 +11,7 @@ const Postings = () => {
 
   const fetchPostings = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/myPostings', { userEmail: sessionStorage.getItem('email') }, {
+      const response = await axios.post('https://drive-together-backend.onrender.com/3001/myPostings', { userEmail: sessionStorage.getItem('email') }, {
         headers: {
           'auth-token': localStorage.getItem('token')
         }
