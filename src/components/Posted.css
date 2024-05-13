@@ -1,0 +1,39 @@
+.posted-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .posted-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .posted-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .posted-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .posted-label {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .posted-value {
+    color: #333;
+  }
+  
+  .posted-not-found {
+    color: #999;
+  }
+  
