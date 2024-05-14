@@ -11,7 +11,7 @@ const Bookings = () => {
 
   const fetchBookings = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/myBookings', { userEmail: sessionStorage.getItem('email') }, {
+      const response = await axios.post('https://drive-together-backend.onrender.com/myBookings', { userEmail: sessionStorage.getItem('email') }, {
         headers: {
           'auth-token': localStorage.getItem('token')
         }

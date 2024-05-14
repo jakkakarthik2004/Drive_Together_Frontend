@@ -1,37 +1,37 @@
+.book-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-   .book-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container input,
+.input-container button {
+  margin: 5px;
+  padding: 10px;
+  flex: 1 1 200px; /* Adjust the flex basis to control input width */
+}
+
+/* Responsive Styling */
+@media only screen and (max-width: 600px) {
+  .input-container input,
+  .input-container button {
+    flex-basis: calc(50% - 10px); /* Two inputs per row */
   }
-  
-  input[type="text"],
-  input[type="date"],
-  input[type="number"],
-  button {
-    margin: 5px;
-    padding: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+  .input-container input,
+  .input-container button {
+    flex-basis: calc(100% - 10px); /* Full width for inputs on smaller screens */
   }
-  
-  .booked-table-container {
-    margin-top: 20px;
-  }
-  
-  .booked-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .booked-table th,
-  .booked-table td {
-    padding: 10px;
-    border: 1px solid #ddd;
-    text-align: left;
-  }
-  
-  .booked-table th {
-    background-color: #f2f2f2;
-  }
+}
 
 .booked-table-container {
   margin-top: 20px;
@@ -63,15 +63,4 @@
 
 .booked-table button:hover {
   background-color: #0056b3;
-}
-  
-
-.input-container {
-  display: flex;
-  align-items: center;
-}
-
-.input-container input,
-.input-container button {
-  margin-right: 10px;
 }

@@ -34,7 +34,7 @@ const Post = () => {
   const postride = () => {
     const postingId = Math.floor(100000 + Math.random() * 900000);
     const data = { leavingFrom, goingTo, date, carName, numberOfSeats, price, postingId, email };
-    axios.post('http://localhost:3001/postride', data, {
+    axios.post('https://drive-together-backend.onrender.com/postride', data, {
       headers: {
         'auth-token': localStorage.getItem('token')
       }
