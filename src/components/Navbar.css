@@ -80,3 +80,16 @@
     left: 0;
   }
 }
+
+
+/* Navbar.css */
+.custom-toast {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px; /* Adjust this to fit your needs */
+  text-align: center;
+  z-index: 9999; /* Ensure the toast appears above other elements */
+}
+
