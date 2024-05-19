@@ -30,7 +30,6 @@ const Login = () => {
             transition: Slide,
             className: "custom-toast",
           });
-          alert(response.data.message);
         } else {
           sessionStorage.setItem("username", response.data.user);
           sessionStorage.setItem("email", response.data.email);
