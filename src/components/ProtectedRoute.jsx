@@ -17,7 +17,10 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
         if (isAuthenticated) {
           return <Component {...props} />;
         } else {
-          alert("You need to be logged in to access this page.");
+          toast.error("You need to be logged in to access this page.", {
+            transition: Slide,
+            className: 'custom-toast',
+          })
           return (
             <div className="unauthenticated-container">
               <div className="unauthenticated-heading">Please log in to view this page.</div>
