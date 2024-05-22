@@ -26,6 +26,7 @@ const Navbar = () => {
     console.log('Logout button clicked');
     console.log('Current localStorage before removal:', localStorage.getItem('auth-token'));
     localStorage.clear();
+    sessionStorage.clear();
     console.log('Current localStorage after removal:', localStorage.getItem('auth-token'));
     toast.success('Logout successful!', {
       // position: toast.POSITION.TOP_CENTER,
