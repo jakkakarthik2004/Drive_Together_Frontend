@@ -53,8 +53,7 @@
 
 
 import React from 'react';
-import { ToastContainer, Slide } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 import './App.css';
 import Navbar from './components/Navbar';
 import { Switch, Route } from 'react-router-dom';
@@ -99,7 +98,7 @@ function App() {
           <About />
         </Route>
       </Switch>
-      <ToastContainer />
+
     </>
   );
 }
