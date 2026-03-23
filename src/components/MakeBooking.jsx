@@ -24,7 +24,7 @@ const MakeBooking = () => {
 
     const makeBooking = () => {
         const data = { leavingFrom, goingTo, date, carName, numberOfSeats, price, selectedSeats, postingId, userEmail, userPhone };
-        axios.post('https://drive-together-backend.onrender.com/makeBooking', data, {
+        axios.post('http://ekstesting.vigneshjakka.online/api/makeBooking', data, {
             headers: {
                 'auth-token': localStorage.getItem('token')
             }
