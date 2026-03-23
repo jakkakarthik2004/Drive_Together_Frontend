@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Register.css';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import { toast, ToastContainer, Slide } from 'react-toastify';
+
 
 const Register = () => {
     const [Name, setName] = useState('');
@@ -30,48 +30,30 @@ const Register = () => {
 
     const pushData = () => {
         if(Name === '' || email === '' || password === '' || confirmPassword === '' || phone === '') {
-            toast.error("Please fill in all fields!!", {
-                transition: Slide,
-                className: "custom-toast",
-              });
+            alert("Please fill in all fields!!");
             return;
         }
         else if(password !== confirmPassword) {
-            toast.error("Passwords do not match!!", {
-                transition: Slide,
-                className: "custom-toast",
-            })
+            alert("Passwords do not match!!");
             return;
         }
         else if(phone.length !== 10){
-            toast.error("Please enter a valid phone number!!", {
-                transition: Slide,
-                className: "custom-toast",
-            })
+            alert("Please enter a valid phone number!!");
             return;
         }
         else if(email.indexOf('@') === -1 || email.indexOf('.') === -1) {
-            toast.error("Please enter a valid email address!!", {
-                transition: Slide,
-                className: "custom-toast",
-            })
+            alert("Please enter a valid email address!!");
             return;
         }
         else {
             const data = { Name, email, password, confirmPassword, phone };
             axios
-                .post('https://drive-together-backend.onrender.com/register', data)
+                .post('http://ekstesting.vigneshjakka.online/api/register', data)
                 .then((response) => {
                     if (response.data.success === false) {
-                        toast.error(response.data.message, {
-                            transition: Slide,
-                            className: "custom-toast",
-                        })
+                        alert(response.data.message);
                     } else {
-                        toast.success("Login successful!", {
-                            transition: Slide,
-                            className: "custom-toast",
-                          });
+
                         history.push('/login');
                     }
                 })
