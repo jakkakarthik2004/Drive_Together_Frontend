@@ -6,8 +6,7 @@ import { IoLogInOutline } from "react-icons/io5";
 import { IoCarSportOutline } from "react-icons/io5";
 import { VscAccount } from "react-icons/vsc";
 import { useHistory } from "react-router-dom";
-import { toast, ToastContainer, Slide } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 
 const Navbar = () => {
   const userName = sessionStorage.getItem("username");
@@ -27,11 +26,7 @@ const Navbar = () => {
     console.log('Current localStorage before removal:', localStorage.getItem('auth-token'));
     localStorage.clear();
     console.log('Current localStorage after removal:', localStorage.getItem('auth-token'));
-    toast.success('Logout successful!', {
-      // position: toast.POSITION.TOP_CENTER,
-      transition: Slide,
-      className: 'custom-toast'
-    });
+    alert('Logout successful!');
     history.push('/login');
   };
   
