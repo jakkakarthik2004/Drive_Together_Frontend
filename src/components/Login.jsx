@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import "./Login.css";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { toast, ToastContainer, Slide } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,22 +21,15 @@ const Login = () => {
   const getData = () => {
     const data = { email, password };
     axios
-      .post("https://drive-together-backend.onrender.com/login", data)
+      .post("http://ekstesting.vigneshjakka.online/api/login", data)
       .then((response) => {
         if (response.data.status === false) {
-          toast.error("Invalid login credentials", {
-            transition: Slide,
-            className: "custom-toast",
-          });
+          alert("Invalid login credentials");
         } else {
           sessionStorage.setItem("username", response.data.user);
           sessionStorage.setItem("email", response.data.email);
           sessionStorage.setItem("phone", response.data.phone);
           localStorage.setItem("token", response.data.token);
-          toast.success("Login successful!", {
-            transition: Slide,
-            className: "custom-toast",
-          });
           history.push("/home");
         }
       })
@@ -65,7 +56,7 @@ const Login = () => {
         autoComplete="off"
       />
       <button onClick={getData}>Log in</button>
-      <ToastContainer />
+
     </div>
   );
 };
