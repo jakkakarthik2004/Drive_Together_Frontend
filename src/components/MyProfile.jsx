@@ -8,7 +8,7 @@ const MyProfile = () => {
     const userEmail = sessionStorage.getItem('email');
     const fetchUserData = async () => {
       try {
-        const response = await axios.post('https://drive-together-backend.onrender.com/userProfile', { userEmail }, {
+        const response = await axios.post('http://ekstesting.vigneshjakka.online/api/userProfile', { userEmail }, {
           headers: {
             'auth-token': localStorage.getItem('token')
           }
